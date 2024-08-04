@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { v4 as uuid } from "uuid";
+import { uuid } from "uuidv4";
 import Link from "next/link";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Webcam from "react-webcam";
