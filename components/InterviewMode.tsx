@@ -20,11 +20,13 @@ export default function InterviewMode({
     name: string;
     description: string;
     level: string;
+    prompt: string;
   }) => void;
   interviewers: Array<{
     id: string;
     name: string;
     description: string;
+    prompt: string;
   }>;
   setStep: (step: number) => void;
 }) {

@@ -36,7 +36,7 @@ const SideBar = () => {
           <nav className="flex-1 space-y-1 bg-white px-6 space-y-3">
             {mainMenu.map((item, index) =>
               item.name === "Interview Vault" ? (
-                <InterviewVault pathname={pathname} />
+                <InterviewVault pathname={pathname} key={index} />
               ) : (
                 <Link
                   className={`flex items-center px-3 min-h-[40px] text-sm font-medium rounded-md ${

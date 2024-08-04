@@ -154,7 +154,6 @@ export default function Home() {
       clearInterval(timer);
     };
   });
-
   const handleDownload = async () => {
     if (recordedChunks.length) {
       setSubmitting(true);
@@ -229,18 +228,19 @@ export default function Home() {
           setTranscript(results.transcript);
         }
 
+        console.log("Uploaded successfully!");
+
         await Promise.allSettled([
           new Promise((resolve) => setTimeout(resolve, 800)),
         ]).then(() => {
           setCompleted(true);
+          console.log("Success!");
         });
 
         if (results.transcript.length > 0) {
           const prompt = `Please give feedback on the following interview question: ${question} given the following transcript: ${
             results.transcript
-          }. 
-          ${selectedInterviewer.prompt}\n
-          ${
+          }. ${
             selected.name === "Behavioral"
               ? "Please also give feedback on the candidate's communication skills. Make sure their response is structured (perhaps using the STAR or PAR frameworks)."
               : "Please also give feedback on the candidate's communication skills. Make sure they accurately explain their thoughts in a coherent way. Make sure they stay on topic and relevant to the question."
